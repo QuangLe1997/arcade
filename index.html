@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>QUANG ARCADE — 5 Free Browser Games · Play Instantly</title>
+<meta name="description" content="A tiny arcade of 5 free browser games — tank defense, 3D snake, bubble shooter, watermelon merge & metal Tetris. Click any game, play instantly. No install, no login." />
+<!-- Open Graph / social link preview -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="QUANG ARCADE" />
+<meta property="og:title" content="QUANG ARCADE — 5 Free Browser Games" />
+<meta property="og:description" content="Tank defense, 3D snake, bubble shooter, watermelon merge & metal Tetris. Click & play instantly — no install." />
+<meta property="og:url" content="https://quangle1997.github.io/arcade/" />
+<meta property="og:image" content="https://quangle1997.github.io/arcade/assets/tank-shooter.jpeg" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="QUANG ARCADE — 5 Free Browser Games" />
+<meta name="twitter:description" content="Click any game, play instantly in your browser. No install." />
+<meta name="twitter:image" content="https://quangle1997.github.io/arcade/assets/tank-shooter.jpeg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🕹️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#06060d; --ink:#eef0ff; --mut:#9aa0c0; --line:rgba(255,255,255,.10);
+    --disp:'Orbitron',system-ui,sans-serif; --body:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--body);
+    min-height:100vh; overflow-x:hidden; line-height:1.45;
+    -webkit-font-smoothing:antialiased; position:relative;
+  }
+  /* drifting gradient mesh behind everything */
+  body::before{
+    content:""; position:fixed; inset:-30%; z-index:-2; pointer-events:none;
+    background:
+      radial-gradient(40% 40% at 18% 22%, rgba(231,181,74,.16), transparent 60%),
+      radial-gradient(38% 38% at 82% 18%, rgba(127,224,224,.16), transparent 60%),
+      radial-gradient(45% 45% at 76% 84%, rgba(255,90,138,.15), transparent 60%),
+      radial-gradient(42% 42% at 22% 82%, rgba(167,139,250,.15), transparent 60%);
+    filter:blur(20px); animation:mesh 26s ease-in-out infinite alternate;
+  }
+  @keyframes mesh{ from{transform:translate3d(-3%,-2%,0) scale(1)} to{transform:translate3d(3%,3%,0) scale(1.08)} }
+  #bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
+
+  .wrap{max-width:1240px; margin:0 auto; padding:0 22px;}
+
+  /* ── HERO ───────────────────────────────── */
+  header.hero{ text-align:center; padding:clamp(54px,9vw,110px) 0 26px; }
+  .kicker{ font-family:var(--disp); font-weight:600; letter-spacing:.42em; font-size:12px;
+    color:var(--mut); text-transform:uppercase; margin-bottom:18px; }
+  h1{ font-family:var(--disp); font-weight:900; letter-spacing:.04em;
+    font-size:clamp(34px,9vw,104px); line-height:.96; text-transform:uppercase; overflow-wrap:break-word;
+    background:linear-gradient(95deg,#ffd24a 0%,#7fe0e0 34%,#a78bfa 66%,#ff5a8a 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 6px 40px rgba(127,224,224,.22)); animation:floaty 6s ease-in-out infinite; }
+  @keyframes floaty{ 50%{transform:translateY(-7px)} }
+  .sub{ margin:20px auto 0; max-width:640px; font-size:clamp(15px,2.4vw,19px); color:#c8cce8; }
+  .sub b{ color:#ffd24a; }
+  .chips{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:26px; }
+  .chip{ font-family:var(--disp); font-weight:600; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    padding:9px 15px; border:1px solid var(--line); border-radius:999px; color:#dfe3ff;
+    background:rgba(255,255,255,.04); backdrop-filter:blur(6px); }
+  .chip b{ color:#ffd24a; }
+
+  /* ── GRID ───────────────────────────────── */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:24px; padding:34px 0 10px; }
+  .card{ --accent:#7fe0e0; position:relative; display:flex; flex-direction:column;
+    border:1px solid var(--line); border-radius:20px; overflow:hidden; cursor:pointer;
+    background:linear-gradient(180deg,rgba(22,24,38,.72),rgba(12,13,22,.82));
+    backdrop-filter:blur(8px); text-decoration:none; color:inherit;
+    transition:transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s, border-color .28s; }
+  .card:hover{ transform:translateY(-8px); border-color:color-mix(in srgb,var(--accent) 55%,transparent);
+    box-shadow:0 24px 60px -18px color-mix(in srgb,var(--accent) 55%,transparent), 0 0 0 1px color-mix(in srgb,var(--accent) 30%,transparent) inset; }
+  .thumb{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#0a0b14; }
+  .thumb img{ width:100%; height:100%; object-fit:cover; object-position:center;
+    transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .thumb img{ transform:scale(1.07); }
+  .thumb::after{ content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg,transparent 40%,rgba(8,8,16,.55) 80%,rgba(8,8,16,.92)); }
+  .badge{ position:absolute; top:12px; left:12px; z-index:2; font-family:var(--disp); font-weight:800;
+    font-size:10.5px; letter-spacing:.16em; padding:6px 11px; border-radius:8px; color:#0a0a12;
+    background:linear-gradient(90deg,#ffd24a,#ff8a3a); box-shadow:0 4px 16px rgba(255,160,60,.4); }
+  .num{ position:absolute; top:10px; right:14px; z-index:2; font-family:var(--disp); font-weight:900;
+    font-size:30px; color:rgba(255,255,255,.16); line-height:1; }
+  .meta{ padding:16px 18px 20px; display:flex; flex-direction:column; gap:11px; flex:1; }
+  .gtitle{ font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:.02em;
+    display:flex; align-items:center; gap:9px; }
+  .gtitle .dot{ width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent); flex:none; }
+  .gsub{ font-size:13px; color:var(--accent); font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-top:-4px; }
+  .gdesc{ font-size:14.5px; color:#b9bee0; flex:1; }
+  .tags{ display:flex; flex-wrap:wrap; gap:7px; }
+  .tag{ font-size:11px; letter-spacing:.05em; color:#cdd2f0; padding:4px 9px; border-radius:7px;
+    background:rgba(255,255,255,.06); border:1px solid var(--line); }
+  .play{ margin-top:6px; display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    font-family:var(--disp); font-weight:800; font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+    padding:13px 18px; border-radius:12px; color:#0a0a12; border:0;
+    background:linear-gradient(90deg,var(--accent), color-mix(in srgb,var(--accent) 50%,#ffffff));
+    box-shadow:0 8px 24px -8px var(--accent); transition:filter .2s, transform .12s; }
+  .card:hover .play{ filter:brightness(1.08) saturate(1.1); }
+  .card:active{ transform:translateY(-3px); }
+
+  /* ── FOOTER ─────────────────────────────── */
+  footer{ text-align:center; padding:46px 0 60px; color:var(--mut); font-size:14px; }
+  footer a{ color:#cdd2f0; text-decoration:none; border-bottom:1px solid var(--line); }
+  footer a:hover{ color:#fff; }
+  .heart{ color:#ff5a8a; }
+
+  @media (max-width:560px){
+    .grid{ grid-template-columns:1fr; gap:18px; }
+    h1{ letter-spacing:.01em; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important;} }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">★ &nbsp; A tiny arcade by QuangLe &nbsp; ★</div>
+    <h1>Quang Arcade</h1>
+    <p class="sub">Five hand-built browser games. Click any one and it plays <b>instantly</b> — no install, no login, free forever. Works on phone &amp; desktop.</p>
+    <div class="chips">
+      <span class="chip"><b>5</b>&nbsp; Games</span>
+      <span class="chip">100% Free</span>
+      <span class="chip">No Install</span>
+      <span class="chip">Play in Browser</span>
+      <span class="chip">📱 Mobile + 🖥️ Desktop</span>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" style="--accent:#e7b54a" href="https://quangle1997.github.io/tank-shooter/" target="_blank" rel="noopener" aria-label="Play STEEL SIEGE">
+      <div class="thumb">
+        <span class="badge">★ Newest</span>
+        <span class="num">01</span>
+        <img src="assets/tank-shooter.jpeg" alt="STEEL SIEGE screenshot" loading="lazy" />
+      </div>
+      <div class="meta">
+        <div class="gtitle"><span class="dot"></span>STEEL SIEGE</div>
+        <div class="gsub">3D Tank Defense</div>
+        <p class="gdesc">Command a war machine, hold the line against relentless waves of enemy tanks, and unleash a 14-gun arsenal — rockets, mortars, flamethrowers &amp; more.</p>
+        <div class="tags"><span class="tag">3D</span><span class="tag">Action</span><span class="tag">Twin-Stick</span><span class="tag">Roguelite</span></div>
+        <span class="play">▶ Play Now</span>
+      </div>
+    </a>
+
+    <a class="card" style="--accent:#7fe0e0" href="https://quangle1997.github.io/neon-serpent-3d/" target="_blank" rel="noopener" aria-label="Play NEON SERPENT 3D">
+      <div class="thumb">
+        <span class="num">02</span>
+        <img src="assets/neon-serpent-3d.jpeg" alt="NEON SERPENT 3D screenshot" loading="lazy" />
+      </div>
+      <div class="meta">
+        <div class="gtitle"><span class="dot"></span>NEON SERPENT 3D</div>
+        <div class="gsub">Snake, Reborn in 3D</div>
+        <p class="gdesc">The classic snake reimagined in glowing 3D space. Weave across a neon grid, grow longer, grab orbs — and never crash into your own tail.</p>
+        <div class="tags"><span class="tag">3D</span><span class="tag">Arcade</span><span class="tag">Classic</span></div>
+        <span class="play">▶ Play Now</span>
+      </div>
+    </a>
+
+    <a class="card" style="--accent:#ffb24a" href="https://quangle1997.github.io/dino-egg-shooter/" target="_blank" rel="noopener" aria-label="Play DINO EGG POP">
+      <div class="thumb">
+        <span class="num">03</span>
+        <img src="assets/dino-egg-shooter.jpeg" alt="DINO EGG POP screenshot" loading="lazy" />
+      </div>
+      <div class="meta">
+        <div class="gtitle"><span class="dot"></span>DINO EGG POP</div>
+        <div class="gsub">Bubble Shooter</div>
+        <p class="gdesc">Aim, shoot and match 3 dino eggs to pop the whole nest. Juicy, colorful match-3 bubble fun with boosters and a cozy jungle vibe.</p>
+        <div class="tags"><span class="tag">Casual</span><span class="tag">Match-3</span><span class="tag">Puzzle</span></div>
+        <span class="play">▶ Play Now</span>
+      </div>
+    </a>
+
+    <a class="card" style="--accent:#ff5a8a" href="https://quangle1997.github.io/suika-merge/" target="_blank" rel="noopener" aria-label="Play SUIKA MERGE">
+      <div class="thumb">
+        <span class="num">04</span>
+        <img src="assets/suika-merge.jpeg" alt="SUIKA MERGE screenshot" loading="lazy" />
+      </div>
+      <div class="meta">
+        <div class="gtitle"><span class="dot"></span>SUIKA MERGE</div>
+        <div class="gsub">Watermelon Merge</div>
+        <p class="gdesc">Drop fruit into the cup, merge matching pairs into bigger ones, and chase the mighty watermelon. An addictive one-more-go physics puzzler.</p>
+        <div class="tags"><span class="tag">Casual</span><span class="tag">Puzzle</span><span class="tag">Physics</span></div>
+        <span class="play">▶ Play Now</span>
+      </div>
+    </a>
+
+    <a class="card" style="--accent:#a78bfa" href="https://quangle1997.github.io/brick-blitz/" target="_blank" rel="noopener" aria-label="Play BRICK BLITZ">
+      <div class="thumb">
+        <span class="num">05</span>
+        <img src="assets/brick-blitz.jpeg" alt="BRICK BLITZ screenshot" loading="lazy" />
+      </div>
+      <div class="meta">
+        <div class="gtitle"><span class="dot"></span>BRICK BLITZ</div>
+        <div class="gsub">Metal Tetris</div>
+        <p class="gdesc">Stack blocks, clear full rows and beat the gravity blitz — a glossy metal take on Tetris where every level cranks the speed.</p>
+        <div class="tags"><span class="tag">Arcade</span><span class="tag">Puzzle</span><span class="tag">Blocks</span></div>
+        <span class="play">▶ Play Now</span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    Built by <a href="https://github.com/QuangLe1997" target="_blank" rel="noopener">QuangLe1997</a>
+    · crafted with <span class="heart">♥</span> &amp; Claude Code · zero-build HTML5 · GitHub Pages
+  </footer>
+</div>
+
+<script>
+/* lightweight drifting-particle background (no DOM injection) */
+(function(){
+  const c=document.getElementById('bg'), x=c.getContext('2d'); let w,h,P,raf;
+  const COLORS=['#ffd24a','#7fe0e0','#a78bfa','#ff5a8a','#ffffff'];
+  function size(){ w=c.width=innerWidth*devicePixelRatio; h=c.height=innerHeight*devicePixelRatio; }
+  function init(){ size(); const n=Math.min(90, Math.floor(innerWidth/16));
+    P=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,
+      r:(Math.random()*1.8+.5)*devicePixelRatio, vx:(Math.random()-.5)*.12*devicePixelRatio,
+      vy:(Math.random()-.5)*.12*devicePixelRatio, a:Math.random()*.5+.15,
+      c:COLORS[Math.random()*COLORS.length|0], tw:Math.random()*6.28})); }
+  function tick(){ x.clearRect(0,0,w,h);
+    for(const p of P){ p.x+=p.vx; p.y+=p.vy; p.tw+=.03;
+      if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0;
+      x.globalAlpha=p.a*(.6+.4*Math.sin(p.tw)); x.fillStyle=p.c;
+      x.beginPath(); x.arc(p.x,p.y,p.r,0,6.2832); x.fill(); }
+    x.globalAlpha=1; raf=requestAnimationFrame(tick); }
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){ init(); tick();
+    addEventListener('resize',()=>{cancelAnimationFrame(raf);init();tick();}); }
+})();
+</script>
+</body>
+</html>
