@@ -4,6 +4,8 @@ A one-page showcase of my browser games — click any card and it plays **instan
 
 **▶ Live:** https://quangle1997.github.io/arcade/
 
+> 📘 **Building a new game?** Read the **[Game Playbook](PLAYBOOK.md)** — the full spec for style/design system, repo + GitHub Pages deploy, dev rules (git safety, verify protocol), media-tools key-art, and how to wire a finished game into this hub.
+
 ## Games
 
 | # | Game | Genre | Play |
@@ -23,8 +25,11 @@ A one-page showcase of my browser games — click any card and it plays **instan
 
 ## Adding a game
 
+Short version (full step-by-step in **[PLAYBOOK.md §8](PLAYBOOK.md)**):
+
 1. Drop a `assets/<id>.jpeg` thumbnail (≈16:10 or portrait — cards crop with `object-fit:cover`).
-2. Copy a `.card` block in `index.html`, set the `--accent` colour, title, tagline, description, tags and the live URL.
+2. Copy a `.card` block in `index.html` (static HTML only — no JS templating), set the `--accent` colour, `num`, title, tagline, description, tags and the live URL. Move the `★ Newest` badge to the new card.
+3. Bump the game count in `<title>` / meta / OG / hero chip, update the Games table above, then `git add` only those files and push.
 
 ---
 Built by [QuangLe1997](https://github.com/QuangLe1997) · crafted with ♥ &amp; Claude Code.
