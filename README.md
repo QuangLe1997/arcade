@@ -17,7 +17,7 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 05 | **BRICK BLITZ** | Glossy "metal Tetris" speed-ramp | https://quangle1997.github.io/brick-blitz/ |
 | 06 | **SLIDE QUEST** | Sliding picture puzzle (3×3–5×5) | https://quangle1997.github.io/slide-puzzle/ |
 | 07 | **BLOCK BLAST** | Neon 8×8 block puzzle (clear lines, no gravity) | https://quangle1997.github.io/block-blast/ |
-| 08 | **TRIPLE TILE** | Neon tile-match puzzle (match 3, 7-slot tray) | https://quangle1997.github.io/triple-tile/ |
+| 08 | **TRIPLE MATCH 3D** | Glossy 3D tile-match puzzle (match 3, bloom glow) | https://quangle1997.github.io/triple-tile/ |
 
 ## Tech
 
