@@ -26,6 +26,7 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 14 | **SKYLINE STACK** | One-tap 3D tower stacker — slice the overhang, chain PERFECT drops to grow back & turn the skyline white-hot | https://quangle1997.github.io/skyline-stack/ |
 | 15 | **LEGION RUSH** | 3D neon crowd-multiplier runner — steer a legion through ×/＋ gates, dodge culling hazards, slam the barrier (8 stages, no-loss streak) | https://quangle1997.github.io/legion-rush/ |
 | 16 | **UMBRA** | 3D shadow-silhouette puzzle — rotate a glowing construct so its cast shadow matches the target (cat/key/bird); dual-light levels solve two shadows at once (15 levels, star ratings) | https://quangle1997.github.io/umbra/ |
+| 17 | **COMET** | One-tap 3D orbit-slingshot flow arcade — latch a gravity well & orbit, release to thread the goal ring, flow seamlessly into endless harder chambers; FLOW slow-mo + score multiplier, pulsar/debris hazards | https://quangle1997.github.io/comet/ |
 
 ## Tech
 
