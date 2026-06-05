@@ -21,6 +21,7 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 09 | **PRISM POUR** | Water-sort puzzle (pour colors into matching tubes) | https://quangle1997.github.io/prism-pour/ |
 | 10 | **PULSE SURVIVOR** | Neon survivors-like bullet-heaven (auto-fire, OVERDRIVE burst) | https://quangle1997.github.io/pulse-survivor/ |
 | 11 | **OVERCLOCK** | Active-idle energy-reactor clicker (tap core, generators, SURGE, prestige) | https://quangle1997.github.io/overclock/ |
+| 12 | **BEATFALL** | Synthwave 4-lane rhythm tap (Perfect/Good/Miss, combo, STROBE ×2, S/A/B/C grades) | https://quangle1997.github.io/beatfall/ |
 
 ## Tech
 
