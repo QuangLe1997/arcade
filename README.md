@@ -23,6 +23,7 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 11 | **OVERCLOCK** | Active-idle energy-reactor clicker (tap core, generators, SURGE, prestige) | https://quangle1997.github.io/overclock/ |
 | 12 | **BEATFALL** | Synthwave 4-lane rhythm tap (Perfect/Good/Miss, combo, STROBE ×2, S/A/B/C grades) | https://quangle1997.github.io/beatfall/ |
 | 13 | **ION TOWERS** | Synthwave tower defense — 8 maps, 3 towers (RAPID/CANNON/TESLA), boss waves, OVERCHARGE active ability | https://quangle1997.github.io/ion-towers/ |
+| 14 | **SKYLINE STACK** | One-tap 3D tower stacker — slice the overhang, chain PERFECT drops to grow back & turn the skyline white-hot | https://quangle1997.github.io/skyline-stack/ |
 
 ## Tech
 
