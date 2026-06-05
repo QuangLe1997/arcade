@@ -18,6 +18,8 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 06 | **SLIDE QUEST** | Sliding picture puzzle (3×3–5×5) | https://quangle1997.github.io/slide-puzzle/ |
 | 07 | **BLOCK BLAST** | Neon 8×8 block puzzle (clear lines, no gravity) | https://quangle1997.github.io/block-blast/ |
 | 08 | **TRIPLE MATCH 3D** | Glossy 3D tile-match puzzle (match 3, bloom glow) | https://quangle1997.github.io/triple-tile/ |
+| 09 | **PRISM POUR** | Water-sort puzzle (pour colors into matching tubes) | https://quangle1997.github.io/prism-pour/ |
+| 10 | **PULSE SURVIVOR** | Neon survivors-like bullet-heaven (auto-fire, OVERDRIVE burst) | https://quangle1997.github.io/pulse-survivor/ |
 
 ## Tech
 
