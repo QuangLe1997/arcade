@@ -20,6 +20,7 @@ A one-page showcase of my browser games — click any card and it plays **instan
 | 08 | **TRIPLE MATCH 3D** | Glossy 3D tile-match puzzle (match 3, bloom glow) | https://quangle1997.github.io/triple-tile/ |
 | 09 | **PRISM POUR** | Water-sort puzzle (pour colors into matching tubes) | https://quangle1997.github.io/prism-pour/ |
 | 10 | **PULSE SURVIVOR** | Neon survivors-like bullet-heaven (auto-fire, OVERDRIVE burst) | https://quangle1997.github.io/pulse-survivor/ |
+| 11 | **OVERCLOCK** | Active-idle energy-reactor clicker (tap core, generators, SURGE, prestige) | https://quangle1997.github.io/overclock/ |
 
 ## Tech
 
